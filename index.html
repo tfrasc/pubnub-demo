@@ -1,0 +1,48 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title></title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+  <!-- <script src="https://brainblocks.io/brainblocks.min.js"></script> -->
+  <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.20.2.js"></script>
+  <script src="script.js"></script>
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <input id="user_id" hidden></input>
+  <h1>Simple Slack Crypto Clone</h1>
+  <div class="choices-container">
+    <div class="choices">
+      <div data-id="bitcoin" data-ticker="BTC" class="choice">
+        <p class="choice-title">Bitcoin</p>
+        <img class="choice-img" src="https://cdn.coinranking.com/Sy33Krudb/btc.svg" />
+      </div>
+      <div data-id="ethereum" data-ticker="ETH" class="choice">
+        <p class="choice-title">Ethereum</p>
+        <img class="choice-img" src="https://cdn.coinranking.com/rk4RKHOuW/eth.svg" />
+      </div>
+      <div data-id="iota" data-ticker="IOT" class="choice">
+        <p class="choice-title">Iota</p>
+        <img class="choice-img" src="https://cdn.coinranking.com/H1IQ9Bdd-/miota.svg" />
+      </div>
+      <div data-id="nano" data-ticker="XRB" class="choice">
+        <p class="choice-title">Nano</p>
+        <img class="choice-img" src="https://cdn.coinranking.com/HygqO-iPM/nano.svg" />
+      </div>
+    </div>
+  </div>
+  <div class="channels">
+  </div>
+</body>
+</html>
