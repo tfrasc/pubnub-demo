@@ -67,7 +67,7 @@ $(document).ready(function() {
     var channel = $(this).parent().prev().data('id');
     var crypto, amount, user;
 
-    if(msg.indexOf('/pay') !== 1){
+    if(msg.indexOf('/pay') !== -1){
       crypto = msg.split('/')[2];
       amount = msg.split('/')[3];
       user = msg.split('/')[4];
