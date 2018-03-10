@@ -39,7 +39,7 @@ $(document).ready(function() {
                       </div></div>`
                     );
                   } else {
-                    $(`.channel-content[data-id='${message.channel}']`).append(`<div class="message-container"><div class="message mine">\
+                    $(`.channel-content[data-id='${message.channel}']`).append(`<div class="message-container"><div class="message">\
                       User ${message.userMetadata.user_id} paid ${message.userMetadata.amount} ${message.userMetadata.crypto} to User ${message.userMetadata.to_user}\
                       </div></div>`
                     );
