@@ -1,13 +1,13 @@
 $(document).ready(function() {
   $('#user_id').val(Math.floor(Math.random() * 100000));
 
-  $('.choice').each(function() {
-    var ticker = $(this).data('ticker');
-
-    $.get(`https://api.coinmarketcap.com/v1/ticker/${ticker}`, function(err, response) {
-      console.log(response);
-    });
-  });
+  // $('.choice').each(function() {
+  //   var ticker = $(this).data('ticker');
+  //
+  //   $.get(`https://api.coinmarketcap.com/v1/ticker/${ticker}`, function(err, response) {
+  //     console.log(response);
+  //   });
+  // });
 
   function publish() {
       pubnub = new PubNub({
@@ -22,7 +22,7 @@ $(document).ready(function() {
               }
           },
           message: function(message) {
-              console.log("New Message!!", message);
+              // console.log("New Message!!", message);
               if(message.userMetadata.user_id == $('#user_id').val()) {
 
                 $(`.channel-content[data-id='${message.channel}']`).append(`<div class="message-container"><div class="message mine">${message.message}</div></div>`);
@@ -55,7 +55,7 @@ $(document).ready(function() {
       }
     }
     pubnub.publish(publishConfig, function(status, response) {
-        console.log(status, response);
+        // console.log(status, response);
     });
 
     $(this).prev().val('');
@@ -81,24 +81,8 @@ $(document).ready(function() {
       </div>`
     )
     pubnub.subscribe({
-        channels: [`${channel}`],
-        storeInHistory: false
+        channels: [`${channel}`]
     });
-
-    if(channel == 'nano') {
-      // brainblocks.Button.render({
-      //   // Pass in payment options
-      //   payment: {
-      //     destination: 'xrb_3or7imutcewtz14borpxhr3tqhhy58fuaq6xn45h8h55hb4nmmtjg5r68h7w',
-      //     currency:    'rai',
-      //     amount:      '1000'
-      //   },
-      //   // Handle successful payments
-      //   onPayment: function(data) {
-      //     console.log('Payment successful!', data.token);
-      //   }
-      // }, '#nano-button');
-    }
 
     $(this).remove();
   });
